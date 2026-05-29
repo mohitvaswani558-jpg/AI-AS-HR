@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-lowest": "#010f1f",
+                    "primary-fixed-dim": "#bec6e0",
+                    "tertiary-container": "#231500",
+                    "inverse-on-surface": "#233143",
+                    "on-primary": "#283044",
+                    "surface-variant": "#273647",
+                    "on-secondary-fixed-variant": "#004395",
+                    "on-secondary-container": "#e6ecff",
+                    "on-primary-container": "#798098",
+                    "surface": "#051424",
+                    "tertiary-fixed-dim": "#ebc07c",
+                    "primary-fixed": "#dae2fd",
+                    "secondary-container": "#0566d9",
+                    "on-surface-variant": "#c6c6cd",
+                    "on-secondary": "#002e6a",
+                    "surface-container": "#122131",
+                    "outline": "#909097",
+                    "inverse-surface": "#d4e4fa",
+                    "outline-variant": "#45464d",
+                    "surface-dim": "#051424",
+                    "secondary": "#adc6ff",
+                    "on-tertiary-container": "#9f7b3e",
+                    "on-surface": "#d4e4fa",
+                    "surface-container-highest": "#273647",
+                    "tertiary-fixed": "#ffdeac",
+                    "surface-container-low": "#0d1c2d",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#1c2b3c",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "surface-tint": "#bec6e0",
+                    "primary": "#bec6e0",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "on-tertiary-fixed": "#281900",
+                    "surface-bright": "#2c3a4c",
+                    "on-primary-fixed": "#131b2e",
+                    "inverse-primary": "#565e74",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-secondary-fixed": "#001a42",
+                    "tertiary": "#ebc07c",
+                    "on-background": "#d4e4fa",
+                    "primary-container": "#0f172a",
+                    "on-tertiary": "#432c00",
+                    "background": "#051424",
+                    "on-tertiary-fixed-variant": "#5e4108"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(144, 144, 151, 0.2);
+        }
+        .glass-card-header {
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(144, 144, 151, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(190, 198, 224, 0.2);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(190, 198, 224, 0.4);
+        }
+        [data-permission-active="true"] {
+            border-color: #4ade80 !important;
+            background: rgba(74, 222, 128, 0.05) !important;
+            color: #4ade80 !important;
+        }
+        [data-permission-active="true"] .material-symbols-outlined {
+            color: #4ade80 !important;
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline-variant backdrop-blur-xl bg-surface-container/80 shadow-sm h-20">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">PreppedAI</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 font-semibold transition-colors duration-200" href="#">Practice</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Resources</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Feedback</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hidden md:block p-2 text-on-surface-variant hover:text-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="bg-primary text-on-primary px-4 md:px-6 py-2 rounded-xl font-label-md text-label-md font-bold active:scale-95 transition-transform">Prepare</button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="mb-12">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-2 text-primary">Interview Simulation Setup</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Configure your environment and select your AI interviewer to begin the high-fidelity mock session.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left: AI Persona Selection -->
+<div class="lg:col-span-5 flex flex-col gap-gutter lg:sticky lg:top-32">
+<div class="glass-panel rounded-xl overflow-hidden p-6 md:p-8 flex flex-col max-h-[500px] lg:max-h-[700px]">
+<h2 class="font-headline-md text-headline-md mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">psychology</span>
+                    Select AI Persona
+                </h2>
+<div class="flex flex-col gap-3 overflow-y-auto pr-2 custom-scrollbar flex-grow" id="persona-list">
+<!-- Persona Sarah -->
+<div class="cursor-pointer group relative flex items-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 bg-surface-container-low/50" id="persona-sarah" onclick="selectPersona('sarah')">
+<div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-transparent group-hover:border-primary transition-all flex-shrink-0">
+<img alt="Sarah AI" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHk3OeiUnQgwlGBaZ8oqm6cpcWES0oxaoqKByZo1FQEJcvDBIIpXQ8UvSY7zlCMjZ9b2TWAPEPpEP_XY_L8Zm6pzoce4mQjotFQjOJO3ljZLK7F3zxXxzGfi0-IppbJgmTs7p7C5jxNP7bXzMgSxvoQhYzVUje-Q3UWu6n03nAMytrn3ar19LcAS_WCoFhorXE7N1J3pUY3tT43-4wkxg0t-UI-TDGYWxqU4jcEHtqxci4Xi5x1yRpFMHYffQ-_pP3Zp1rZPFBfqdV"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-base font-bold text-on-surface">Sarah</h3>
+<p class="text-xs text-on-surface-variant">Senior HR Executive</p>
+</div>
+<div class="px-2 py-0.5 rounded bg-secondary/10 border border-secondary/20">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Behavioral</span>
+</div>
+<div class="absolute top-2 right-2 check-icon hidden">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Persona David -->
+<div class="cursor-pointer group relative flex items-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 bg-surface-container-low/50" id="persona-david" onclick="selectPersona('david')">
+<div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-transparent group-hover:border-primary transition-all flex-shrink-0">
+<img alt="David AI" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBSp0SklMCn6nRuf3iH_PGvStzkFtHFQAZMi8Gl5Lb4zw27pYaMmmMnhAJxG4ko1wFC8mwn8Bzh7cv2-QSM84q0SN1XF6Zm81vOGPiOOFzJbvikkB3K6Pv3Fkm_4geiw2S1QMzD1iBYRlNezwtYMtPl5cow-956nH0ti5uaTHGopg-yp-tiK-yvFa4H6Ba0_NwGGtlrV5tGxFJNnNgMYwJOLm9IgTslGGaTMcMgwcsKuuhxswglaUYa_v_IpEtYJCgyQnLiPe3UEuQ"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-base font-bold text-on-surface">David</h3>
+<p class="text-xs text-on-surface-variant">Technical Recruiter</p>
+</div>
+<div class="px-2 py-0.5 rounded bg-tertiary/10 border border-tertiary/20">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Technical</span>
+</div>
+<div class="absolute top-2 right-2 check-icon hidden">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Persona Marcus -->
+<div class="cursor-pointer group relative flex items-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 bg-surface-container-low/50" id="persona-marcus" onclick="selectPersona('marcus')">
+<div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-transparent group-hover:border-primary transition-all flex-shrink-0">
+<img alt="Marcus AI" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA6PjWIP2umxrSSJ8FBwo_05AQkjwxCS2UEfYUec9CKb10bamumBQDJgJMMDFviNhi_xE1VsdpgliErAW_mKG1rHLeIiLu9pJg09N0KCM_f3AUd5fxxNlMgmnQzUUQzEKdBh7YtXeo_mIzo0I9zEdTTqJsghsXDfpz5_SfzhCcUOHix0odPdpJ4O1VdqDz6YsnHeL6sxVt0X5keF5eAh_AOOIN-jX7TunhqdyVD6OPCygrDvq9hb-I8wkzHUGItE3lPfuGXk0_v9pK"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-base font-bold text-on-surface">Marcus</h3>
+<p class="text-xs text-on-surface-variant">Product Strategy Lead</p>
+</div>
+<div class="px-2 py-0.5 rounded bg-primary/10 border border-primary/20">
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Strategic</span>
+</div>
+<div class="absolute top-2 right-2 check-icon hidden">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Persona Elena -->
+<div class="cursor-pointer group relative flex items-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 bg-surface-container-low/50" id="persona-elena" onclick="selectPersona('elena')">
+<div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-transparent group-hover:border-primary transition-all flex-shrink-0">
+<img alt="Elena AI" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbtOirr1bMCiQmIBPkU3QDxdrALb65Ivaq4aqudZnfEaUFJl4NnGo2XJnPib0cpfmLV_H4icEZ9XvRFLrer3_Ybql0ZdcplbQXClKuTi2712W50c2XYLqTqmnwx0pt1NlFffk0SeAMc1hpQodewWk6SjmDqzXPeToqOD2qwP9ihV20VmllMUJa1rXm1UqzU9f9bNse3hpJ9JR3Wa6UlfYUEMs4Dh4QiBvJxyvNsu2QNsMxHis8uIDf1hqQK6XiQCqzBnQASH6hJphu"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-base font-bold text-on-surface">Elena</h3>
+<p class="text-xs text-on-surface-variant">Financial Analysis Expert</p>
+</div>
+<div class="px-2 py-0.5 rounded bg-secondary/10 border border-secondary/20">
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Analytical</span>
+</div>
+<div class="absolute top-2 right-2 check-icon hidden">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Persona Chen -->
+<div class="cursor-pointer group relative flex items-center p-3 rounded-xl border border-outline-variant hover:border-primary transition-all duration-300 bg-surface-container-low/50" id="persona-chen" onclick="selectPersona('chen')">
+<div class="w-14 h-14 rounded-full overflow-hidden mr-4 border-2 border-transparent group-hover:border-primary transition-all flex-shrink-0">
+<img alt="Chen AI" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD25Mo1OH1A0AiG3FcCzRhKZqnXUnA1qqhpRMOmwBoSXNqrQcuxzv501lzxb1VHkaYDiB-lRpIOPo1qUDtLhX_BmsJhvh9L_9bNessXg5C-_85oV083zdR9_eWLPDTfYvd1ZVBsC0gdQ5ww6Xfhn4PUJ3-XQ8vF18LboobAYqLAYCNJ9DejkyG1V-ce36LujZRZ_P7kHRNvUuc4aP6EtuCsePoS4NFQqkFbajdBbjhpXUyKPQrhZkZ8kXDYl2pjqdTwxg5_TpixV92v"/>
+</div>
+<div class="flex-grow">
+<h3 class="font-headline-sm text-base font-bold text-on-surface">Chen</h3>
+<p class="text-xs text-on-surface-variant">Cybersecurity Systems</p>
+</div>
+<div class="px-2 py-0.5 rounded bg-tertiary/10 border border-tertiary/20">
+<span class="text-[10px] font-bold text-tertiary uppercase tracking-widest">Technical</span>
+</div>
+<div class="absolute top-2 right-2 check-icon hidden">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<div class="mt-6 p-4 rounded-lg bg-surface-container-highest/30 border border-outline-variant/30 italic text-sm text-on-surface-variant" id="persona-description">
+                    "From HR behaviorals to deep technical systems and strategic product analysis, choose the expert that matches your career trajectory."
+                </div>
+</div>
+</div>
+<!-- Right: Camera & Permissions -->
+<div class="lg:col-span-7">
+<div class="glass-panel rounded-xl overflow-hidden flex flex-col h-full">
+<div class="glass-card-header px-8 py-4 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Studio Preview</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-error animate-pulse" id="status-indicator"></div>
+<span class="text-xs text-on-surface-variant font-medium" id="status-text">Standby</span>
+</div>
+</div>
+<div class="p-6 md:p-8 flex flex-col items-center">
+<!-- Camera Preview Frame -->
+<div class="relative w-full aspect-video rounded-xl bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-center overflow-hidden shadow-2xl group">
+<!-- Background Placeholder -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-on-surface-variant/40 z-0" id="camera-placeholder">
+<span class="material-symbols-outlined text-6xl mb-4">videocam_off</span>
+<p class="text-sm">Camera Feed Disabled</p>
+</div>
+<!-- Video Simulation (Visual Effect) -->
+<div class="hidden absolute inset-0 bg-slate-900 z-10 flex items-center justify-center" id="video-feed">
+<img class="w-full h-full object-cover opacity-60 grayscale blur-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr76IB5EkHKhz3FeKCJgIuSTR1vlP-khU01nNmlGLaNpCrYqGQJPZdgAI0hR8gc9aw7WzyUKGZBZ_uoihtAH5nv_m9tAJPFq5UlqMHbfmF_2LSYKb4zHdCc1DGaWKf9LJZX1hqzWrOYpHPSynzd0tIUl6jN2RWmuKw3KNZ6CA-mb4QV5XhGA3HKc8qSpdYZRBoTvy5EU7Z4u21suDdY5pBtaoA6RmW_Fzi23KkfzqVk2NswSoQxK6CC4-PgD_mKhU9K63FwjnveR9q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm" id="mic-indicator-icon">settings_voice</span>
+<div class="flex gap-0.5 items-end h-3 hidden" id="mic-visualizer">
+<div class="w-1 bg-primary h-1 rounded-full animate-[bounce_1s_infinite_0s]"></div>
+<div class="w-1 bg-primary h-2 rounded-full animate-[bounce_1.2s_infinite_0.1s]"></div>
+<div class="w-1 bg-primary h-3 rounded-full animate-[bounce_0.8s_infinite_0.2s]"></div>
+<div class="w-1 bg-primary h-1.5 rounded-full animate-[bounce_1.1s_infinite_0.3s]"></div>
+</div>
+</div>
+</div>
+<!-- Decorative HUD -->
+<div class="absolute inset-0 border-[20px] border-transparent pointer-events-none z-20">
+<div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-primary/40"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/40"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-primary/40"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/40"></div>
+</div>
+</div>
+<!-- Controls -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
+<button class="flex items-center justify-center gap-3 p-4 rounded-xl border border-outline transition-all active:scale-95 group hover:bg-surface-container-high" id="btn-camera" onclick="togglePermission('camera')">
+<span class="material-symbols-outlined text-on-surface-variant">videocam</span>
+<span class="font-label-md text-label-md text-on-surface">Enable Camera</span>
+</button>
+<button class="flex items-center justify-center gap-3 p-4 rounded-xl border border-outline transition-all active:scale-95 group hover:bg-surface-container-high" id="btn-mic" onclick="togglePermission('mic')">
+<span class="material-symbols-outlined text-on-surface-variant">mic</span>
+<span class="font-label-md text-label-md text-on-surface">Enable Microphone</span>
+</button>
+</div>
+<div class="w-full mt-10">
+<button class="w-full bg-secondary-container text-on-secondary-container py-5 rounded-xl font-headline-md text-lg font-bold shadow-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-4 opacity-50 cursor-not-allowed" disabled="" id="start-btn" onclick="startInterview()">
+<span class="flex items-center gap-4" id="btn-content">
+                                Start Interview Session
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</span>
+</button>
+<p class="text-center mt-4 text-xs text-on-surface-variant/60 font-label-md">
+                            By clicking start, you agree to our AI methodology and recording terms.
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-outline-variant bg-surface-container-low">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4 mb-8 md:mb-0 items-center md:items-start text-center md:text-left">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">PreppedAI</span>
+<p class="font-label-md text-label-md text-on-surface-variant max-w-xs">
+                © 2024 PreppedAI. Engineering career excellence.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Career Guides</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#">AI Methodology</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    const personasData = {
+        sarah: {
+            name: "Sarah",
+            title: "Senior HR Executive",
+            description: "Sarah specializes in behavioral assessments and corporate cultural fit. Expect deep questions about your leadership, conflict resolution, and career progression.",
+            type: "Behavioral"
+        },
+        david: {
+            name: "David",
+            title: "Technical Recruiter",
+            description: "David focuses on system design and core engineering principles. He'll challenge your technical decision-making and architectural depth.",
+            type: "Technical"
+        },
+        marcus: {
+            name: "Marcus",
+            title: "Product Strategy Lead",
+            description: "Marcus evaluates your product sense and business impact. Prepare for high-level strategic scenarios and market positioning exercises.",
+            type: "Strategic"
+        },
+        elena: {
+            name: "Elena",
+            title: "Financial Analysis Expert",
+            description: "Elena dives deep into data-driven decision making and quantitative analysis. She looks for rigor in your analytical frameworks.",
+            type: "Analytical"
+        },
+        chen: {
+            name: "Chen",
+            title: "Cybersecurity Systems",
+            description: "Chen explores your understanding of security-first design and risk mitigation. Essential for security-sensitive engineering roles.",
+            type: "Technical"
+        }
+    };
+
+    let selectedPersonaId = null;
+    let permissions = { camera: false, mic: false };
+
+    function selectPersona(id) {
+        selectedPersonaId = id;
+        const persona = personasData[id];
+        
+        // Update UI selection state
+        const personas = Object.keys(personasData);
+        personas.forEach(p => {
+            const el = document.getElementById(`persona-${p}`);
+            if (!el) return;
+            const check = el.querySelector('.check-icon');
+            if (p === id) {
+                el.classList.add('border-primary', 'bg-primary/5', 'shadow-[0_0_20px_rgba(190,198,224,0.1)]');
+                check.classList.remove('hidden');
+            } else {
+                el.classList.remove('border-primary', 'bg-primary/5', 'shadow-[0_0_20px_rgba(190,198,224,0.1)]');
+                check.classList.add('hidden');
+            }
+        });
+
+        // Update description text
+        document.getElementById('persona-description').innerText = `"${persona.description}"`;
+        
+        validateState();
+    }
+
+    function togglePermission(type) {
+        permissions[type] = !permissions[type];
+        const btn = document.getElementById(`btn-${type}`);
+        const text = btn.querySelector('span:last-child');
+        
+        if (permissions[type]) {
+            btn.setAttribute('data-permission-active', 'true');
+            text.innerText = type === 'camera' ? 'Camera Active' : 'Microphone Active';
+        } else {
+            btn.removeAttribute('data-permission-active');
+            text.innerText = type === 'camera' ? `Enable ${type.charAt(0).toUpperCase() + type.slice(1)}` : 'Enable Microphone';
+        }
+
+        // Update studio preview visuals
+        const video = document.getElementById('video-feed');
+        const placeholder = document.getElementById('camera-placeholder');
+        const visualizer = document.getElementById('mic-visualizer');
+        const statusIndicator = document.getElementById('status-indicator');
+        const statusText = document.getElementById('status-text');
+
+        if (permissions.camera) {
+            video.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+        } else {
+            video.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+        }
+
+        if (permissions.mic) {
+            visualizer.classList.remove('hidden');
+        } else {
+            visualizer.classList.add('hidden');
+        }
+
+        if (permissions.camera && permissions.mic) {
+            statusIndicator.classList.remove('bg-error', 'animate-pulse');
+            statusIndicator.classList.add('bg-green-400');
+            statusText.innerText = 'Ready';
+        } else {
+            statusIndicator.classList.add('bg-error', 'animate-pulse');
+            statusIndicator.classList.remove('bg-green-400');
+            statusText.innerText = 'Standby';
+        }
+
+        validateState();
+    }
+
+    function validateState() {
+        const startBtn = document.getElementById('start-btn');
+        const isReady = selectedPersonaId && permissions.camera && permissions.mic;
+        
+        if (isReady) {
+            startBtn.disabled = false;
+            startBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        } else {
+            startBtn.disabled = true;
+            startBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        }
+    }
+
+    function startInterview() {
+        const btn = document.getElementById('start-btn');
+        const btnContent = document.getElementById('btn-content');
+        
+        // Show loading state
+        btn.disabled = true;
+        btnContent.innerHTML = `
+            <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-on-secondary-container" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Establishing Neural Link...
+        `;
+
+        // Simulate network delay before navigation
+        setTimeout(() => {
+            window.location.href = 'live-interview.html';
+        }, 1500);
+    }
+
+    // Default initialization (optional - user can choose)
+    // selectPersona('sarah');
+</script>
+</body></html>

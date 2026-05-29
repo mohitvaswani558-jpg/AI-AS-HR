@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interview Results | PreppedAI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .premium-border {
+            border: 1px solid rgba(144, 144, 151, 0.2);
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(189, 198, 224, 0.1);
+        }
+        .radial-progress {
+            transform: rotate(-90deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-fixed": "#d8e2ff",
+                      "surface-container-lowest": "#010f1f",
+                      "primary-fixed-dim": "#bec6e0",
+                      "tertiary-container": "#231500",
+                      "inverse-on-surface": "#233143",
+                      "on-primary": "#283044",
+                      "surface-variant": "#273647",
+                      "on-secondary-fixed-variant": "#004395",
+                      "on-secondary-container": "#e6ecff",
+                      "on-primary-container": "#798098",
+                      "surface": "#051424",
+                      "tertiary-fixed-dim": "#ebc07c",
+                      "primary-fixed": "#dae2fd",
+                      "secondary-container": "#0566d9",
+                      "on-surface-variant": "#c6c6cd",
+                      "on-secondary": "#002e6a",
+                      "surface-container": "#122131",
+                      "outline": "#909097",
+                      "inverse-surface": "#d4e4fa",
+                      "outline-variant": "#45464d",
+                      "surface-dim": "#051424",
+                      "secondary": "#adc6ff",
+                      "on-tertiary-container": "#9f7b3e",
+                      "on-surface": "#d4e4fa",
+                      "surface-container-highest": "#273647",
+                      "tertiary-fixed": "#ffdeac",
+                      "surface-container-low": "#0d1c2d",
+                      "error-container": "#93000a",
+                      "surface-container-high": "#1c2b3c",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-tint": "#bec6e0",
+                      "primary": "#bec6e0",
+                      "on-error": "#690005",
+                      "on-error-container": "#ffdad6",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed": "#281900",
+                      "surface-bright": "#2c3a4c",
+                      "on-primary-fixed": "#131b2e",
+                      "inverse-primary": "#565e74",
+                      "secondary-fixed-dim": "#adc6ff",
+                      "on-secondary-fixed": "#001a42",
+                      "tertiary": "#ebc07c",
+                      "on-background": "#d4e4fa",
+                      "primary-container": "#0f172a",
+                      "on-tertiary": "#432c00",
+                      "background": "#051424",
+                      "on-tertiary-fixed-variant": "#5e4108"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-caps": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b border-outline-variant dark:border-outline-variant backdrop-blur-xl bg-surface-container/80 shadow-sm">
+<div class="flex justify-between items-center px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">PreppedAI</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Dashboard</a>
+<a class="text-primary dark:text-primary border-b-2 border-primary pb-1 font-semibold font-body-md text-body-md" href="#">Practice</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Resources</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="#">Feedback</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="hidden sm:flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">settings</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md active:scale-95 transition-transform">Prepare</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCslH-g3sxD73STEtty-IPpvW0JlpytucMDNrZt_uqpz0G1DUGtcxl_zpeSUwIe6r2rnF8NQtfuVx93Bex2a6tMS4vlL8jK_cuGxY2_d9g1jaubg8bbMmvspJZjrQev5AUBUBDuKdMFl1vDy0J0PIYCJwLaT7hXHWfXTYENDWDEGmUbVeXFy5K9Kd_1MLXTtMVdImjQ_WIld98R60G-rHYGy-DsbTPds4MIrd5dyjOPF34EovFoAsTYsCQl5ryUdiyORBU0mNajfKXW"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section -->
+<div class="mb-12 animate-fade-in" style="animation-delay: 0.1s;">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+<div>
+<span class="text-tertiary font-label-caps uppercase tracking-widest mb-2 block">Interview Completed</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Technical Lead Assessment</h1>
+<p class="text-on-surface-variant max-w-2xl font-body-lg text-body-lg">Senior Software Engineering Domain • 45 Minute Simulation</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-surface-container-high border border-tertiary/30 text-tertiary px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-tertiary/10 transition-colors">Retake Simulation</button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md shadow-lg shadow-primary/20 active:scale-95 transition-transform">Explore New Domain</button>
+</div>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Readiness Score (Bento Main) -->
+<div class="md:col-span-4 glass-card p-8 rounded-xl flex flex-col items-center justify-center text-center animate-fade-in" style="animation-delay: 0.2s;">
+<h3 class="font-label-caps text-on-surface-variant mb-8">Overall Readiness Score</h3>
+<div class="relative w-48 h-48 mb-8">
+<svg class="w-full h-full radial-progress" viewbox="0 0 100 100">
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="transparent" r="45" stroke="currentColor" stroke-width="8"></circle>
+<circle cx="50" cy="50" fill="transparent" r="45" stroke="url(#gradient-blue-gold)" stroke-dasharray="282.7" stroke-dashoffset="42.4" stroke-linecap="round" stroke-width="8"></circle>
+<defs>
+<lineargradient id="gradient-blue-gold" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#bec6e0;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#ebc07c;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-5xl font-bold text-on-surface">85<span class="text-xl font-normal opacity-50">%</span></span>
+<span class="text-tertiary font-label-md mt-1">High Potential</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-md">You're in the top 12% of candidates for this specific role archetype.</p>
+</div>
+<!-- Skills Charts -->
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+<!-- Technical Skills -->
+<div class="glass-card p-6 rounded-xl animate-fade-in" style="animation-delay: 0.3s;">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h4 class="font-label-md text-on-surface">Technical Depth</h4>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end h-32 gap-2 px-2">
+<div class="bg-primary/20 w-full rounded-t-sm relative group h-[90%]">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] text-primary">90</div>
+</div>
+<div class="bg-primary w-full rounded-t-sm relative group h-[75%]"></div>
+<div class="bg-primary/40 w-full rounded-t-sm relative group h-[85%]"></div>
+<div class="bg-primary/60 w-full rounded-t-sm relative group h-[60%]"></div>
+</div>
+<div class="flex justify-between text-[10px] font-label-caps text-outline">
+<span>ARC</span><span>SYS</span><span>COD</span><span>TEST</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant">
+<span class="text-primary font-bold text-headline-md">9.2</span>
+<span class="text-on-surface-variant text-[12px] ml-2">vs 7.4 Avg</span>
+</div>
+</div>
+<!-- Soft Skills -->
+<div class="glass-card p-6 rounded-xl animate-fade-in" style="animation-delay: 0.4s;">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary">groups</span>
+<h4 class="font-label-md text-on-surface">Communication</h4>
+</div>
+<div class="space-y-4">
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[78%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>CLARITY</span>
+<span>78%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[92%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>LEADERSHIP</span>
+<span>92%</span>
+</div>
+<div class="h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[65%]"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant">
+<span>EMPATHY</span>
+<span>65%</span>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant">
+<span class="text-tertiary font-bold text-headline-md">8.1</span>
+<span class="text-on-surface-variant text-[12px] ml-2">vs 6.8 Avg</span>
+</div>
+</div>
+<!-- Confidence Gauge -->
+<div class="glass-card p-6 rounded-xl animate-fade-in" style="animation-delay: 0.5s;">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">psychology</span>
+<h4 class="font-label-md text-on-surface">Confidence</h4>
+</div>
+<div class="flex flex-col items-center py-2">
+<div class="relative h-28 w-28">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-outline-variant" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="125 251" stroke-width="2"></circle>
+<circle class="text-secondary" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="190 251" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center font-bold text-2xl">88%</div>
+</div>
+<p class="text-[10px] font-label-caps text-on-surface-variant mt-4 text-center">DELIVERY STABILITY</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<span class="text-secondary font-bold text-headline-md">High</span>
+<span class="text-on-surface-variant text-[12px] ml-2">Score</span>
+</div>
+</div>
+</div>
+<!-- AI Detailed Feedback -->
+<div class="md:col-span-12 glass-card rounded-xl overflow-hidden animate-fade-in" style="animation-delay: 0.6s;">
+<div class="p-8 border-b border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<h2 class="font-headline-md text-on-surface">AI Performance Insights</h2>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-highest rounded-lg text-label-md">
+<span class="material-symbols-outlined text-primary scale-75">smart_toy</span>
+                        Model: GPT-4 Career Analysis v2.1
+                    </div>
+</div>
+<div class="grid md:grid-cols-2">
+<!-- Strengths -->
+<div class="p-8 md:border-r border-outline-variant">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">verified</span>
+<h3 class="font-headline-sm text-on-surface">Core Strengths</h3>
+</div>
+<div class="space-y-8">
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-primary font-label-md">System Architecture</span>
+<span class="text-on-surface-variant font-label-caps">Exceptional</span>
+</div>
+<p class="text-on-surface-variant text-body-md">Your explanation of horizontal scaling for the microservices prompt was technically precise and forward-thinking.</p>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary italic text-body-md text-on-surface">
+                                    "By decoupling the authentication service from the primary message bus, we ensure that peak login traffic doesn't bottleneck internal event processing..."
+                                </div>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-primary font-label-md">Conflict Resolution</span>
+<span class="text-on-surface-variant font-label-caps">Advanced</span>
+</div>
+<p class="text-on-surface-variant text-body-md">Strong behavioral evidence in your STAR response regarding cross-team friction.</p>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-primary italic text-body-md text-on-surface">
+                                    "I didn't view it as a zero-sum game; instead, I invited the product lead to a joint roadmap session to align our quarterly KPIs..."
+                                </div>
+</div>
+</div>
+</div>
+<!-- Growth Areas -->
+<div class="p-8 bg-surface-container/30">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-2 rounded-lg">trending_up</span>
+<h3 class="font-headline-sm text-on-surface">Growth Opportunities</h3>
+</div>
+<div class="space-y-8">
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-tertiary font-label-md">Cost Optimization Logic</span>
+<span class="text-on-surface-variant font-label-caps">Moderate</span>
+</div>
+<p class="text-on-surface-variant text-body-md">While your solution was performant, you missed an opportunity to discuss the cloud expenditure implications.</p>
+<div class="bg-surface-container-low p-4 rounded-lg border-l-4 border-tertiary italic text-body-md text-on-surface">
+                                    "I would use a standard RDS instance with provisioned IOPS to handle the relational data volume reliably."
+                                </div>
+<p class="text-tertiary text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined scale-75">lightbulb</span>
+                                    AI Tip: Mention Spot Instances or Serverless Aurora for non-critical spikes.
+                                </p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="text-tertiary font-label-md">Answer Conciseness</span>
+<span class="text-on-surface-variant font-label-caps">Attention Needed</span>
+</div>
+<p class="text-on-surface-variant text-body-md">Your response to 'Tell me about yourself' exceeded the 2-minute mark by 45 seconds.</p>
+<div class="flex gap-2">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-[10px] font-bold">STORYTELLING</span>
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-[10px] font-bold">TIMING</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Career Path Visualizer -->
+<div class="mt-gutter glass-card rounded-xl p-8 animate-fade-in" style="animation-delay: 0.7s;">
+<div class="flex items-center justify-between mb-12">
+<div>
+<h3 class="font-headline-md text-on-surface">Career Path Compatibility</h3>
+<p class="text-on-surface-variant font-body-md">Based on your performance, these roles are your best match.</p>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Role Card 1 -->
+<div class="group relative rounded-xl overflow-hidden premium-border aspect-video">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A modern, high-tech workspace with multiple monitors displaying complex code and data visualizations. The lighting is moody and professional with deep blue and slate tones, evoking a sense of focused expertise. Soft gold accents from desk lamps highlight the crisp textures of professional hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUroJq4sbkUtFfPVL0N5654U6rXy_Eo3wuNSv_Z6sN-coykOQ2tDBcA6jD6UVgezHN8Lh8muFbHq8vxMVsBHpaJ9ryujiBX7gAgYjZtsslKB1OkgAf30Lj7J4rxaSYtlBDdT60kAvaceGBr9bFjTYIhsKyhWEeU7G7iu2WoybzH2bnFbD06BjEfS5A8Q2TMbkyUp6npIr5RfGz4IJpKBOSvQWH5wUoq-S1gvFTHmgr7AKn96f2EeezJkHhfjtiNdSdxoQ4ttx-ow3W"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="bg-primary/20 text-primary px-3 py-1 rounded text-[10px] font-bold mb-2 inline-block">98% MATCH</span>
+<h4 class="font-headline-sm text-on-surface">Staff Engineer</h4>
+<p class="text-on-surface-variant text-[12px]">Core Tech Architecture</p>
+</div>
+</div>
+<!-- Role Card 2 -->
+<div class="group relative rounded-xl overflow-hidden premium-border aspect-video">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A collaborative boardroom setting with people interacting in front of a digital whiteboard filled with strategic diagrams. The atmosphere is professional and collaborative, using a dark-mode palette with subtle glassmorphic elements. The lighting is sophisticated, with a premium feel and warm metallic highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuAL7o5F4ZOQU6yPCtnpK9cz1BDRKzRSSCrjwzYWOZwGr6zhA6Zym6uGUh2uvgX6jayUyczHvSDoiLrGxpYZb1gcteAU98m0eZnxwiB9m5L3JfHw-4rd5x6V9UkJKGTnLcqPfsaoQe-1j0M2f7lBysmGCs3xBKDlzGMjXLtEeE-YbEwSAFTQcvUEQmNYLymOxoPZkSRJogl60dfmQsW7tXn8tWDjdFOseV5uw9wU1j9tFbAhBathIbgtS7v6Bq5RkvMoYfmScRZI-z"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="bg-tertiary/20 text-tertiary px-3 py-1 rounded text-[10px] font-bold mb-2 inline-block">84% MATCH</span>
+<h4 class="font-headline-sm text-on-surface">Engineering Manager</h4>
+<p class="text-on-surface-variant text-[12px]">People &amp; Process</p>
+</div>
+</div>
+<!-- Role Card 3 -->
+<div class="group relative rounded-xl overflow-hidden premium-border aspect-video">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-surface-container/20 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A close-up of a sleek digital interface showing cloud infrastructure metrics and global network nodes. The visual style is futuristic and intelligent, featuring glowing blue data lines against a deep navy background. The overall mood is one of absolute control and architectural precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3YgrQOtjId4Hg8mj6soeE5XEF5_NthjWNFQrXlG6ObQwcgi14khlOIvegeAdDtlVdlFB9lGm8jppPPox6QLEGEhjYlWmfXiAbwqB1S4Amwu1_HzkDq-Ayxk7hgt_Znlmhpc7K1UKwMVXg8Ao-3bgxLGjbB9SCWehw71QjSzroGglTwgZ0A6dl8E6vpGzfxC1_CXcsKZLhTP4fkwxd7sGFOAslMa1bzMb4BxNUzbulrm4vbdsT3zvk4dTGhK_bgNeoGO7wUGeOV5FX"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="bg-secondary/20 text-secondary px-3 py-1 rounded text-[10px] font-bold mb-2 inline-block">72% MATCH</span>
+<h4 class="font-headline-sm text-on-surface">Solutions Architect</h4>
+<p class="text-on-surface-variant text-[12px]">Client-Facing Tech Strategy</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant dark:border-outline-variant mt-20">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-container-max mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface">PreppedAI</div>
+<p class="text-on-surface-variant font-label-md text-label-md max-w-xs text-center md:text-left">© 2024 PreppedAI. Engineering career excellence through advanced simulations.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300 underline decoration-primary/30" href="#">Career Guides</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300 underline decoration-primary/30" href="#">AI Methodology</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300 underline decoration-primary/30" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant font-label-md text-label-md hover:text-primary transition-all duration-300 underline decoration-primary/30" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">language</span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline-variant flex items-center justify-center hover:border-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">share</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed based on context: Details/Results screen) -->
+<!-- The FAB is not rendered here as per "Shell Visibility & Relevance" rule for focused/results screens -->
+<script>
+        // Micro-interactions for score update animation
+        window.addEventListener('DOMContentLoaded', () => {
+            const scoreDisplay = document.querySelector('.text-5xl.font-bold');
+            if (scoreDisplay) {
+                let count = 0;
+                const target = 85;
+                const interval = setInterval(() => {
+                    if (count < target) {
+                        count++;
+                        scoreDisplay.innerHTML = `${count}<span class="text-xl font-normal opacity-50">%</span>`;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, 20);
+            }
+        });
+    </script>
+</body></html>
